@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/contato.css')}}" />
+    <title>Menu animado</title>
+  </head>
+  <body>
+    <div class="menu">
+      <button class="action_btn">
+        <ion-icon name="share-outline"></ion-icon>
+      </button>
+
+      <ul>
+        <li style="--i: 1; --x: -50; --y: -100; --color: var(--github-color)">
+          <a href="https://github.com/guinb0">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+        <li style="--i: 2; --x: 50; --y: -100; --color: var(--insta-color)">
+          <a href="https://www.instagram.com/guilherme_nun3s/">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+        <li style="--i: 3; --x: 100; --y: 0; --color: var(--twitter-color)">
+          <a href="https://twitter.com/guinb__">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li style="--i: 4; --x: 50; --y: 100; --color: var(--linkedin-color)">
+          <a href="https://www.linkedin.com/in/guilherme-nunes-bezerra-478518201/">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li style="--i: 5; --x: -50; --y: 100; --color: var(--google-color)">
+          <a href="informações">
+            <ion-icon name="logo-google"></ion-icon>
+          </a>
+        </li>
+        <li style="--i: 6; --x: -100; --y: 0; --color: var(--youtube-color)">
+          <a href="https://www.youtube.com/channel/UCznUPZlmNJqsFgNn8g0VsiA">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      const button = document.querySelector('.action_btn')
+      const menu = document.querySelector('.menu')
+
+      button.onclick = function () {
+        menu.classList.toggle('open')
+      }
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
+

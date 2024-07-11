@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="informações" class="logo">meu currículo</a>
+        <ul>
+          <li><a href="informações">Informações</a></li>
+          <li><a href="https://marvelous-snickerdoodle-497d82.netlify.app/index.html">Projeto De Vendas</a></li>
+          <li><a href="sobre">Sobre</a></li>
+          <li><a href="contato">Contato</a></li>
+        </ul>
+        <div class="theme-toggle-btn">
+          <img src="{{url_for('static', filename='sun.png')}}" alt="" />
+          <img src="{{url_for('static', filename='moon.png')}}" alt=""/>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="container">
+          <div class="left">
+            <h1>Guilherme <span>Nunes</span></h1>
+            <p>
+              Desenvolvedor De Software
+            </p>
+          </div>
+          <div class="right">
+            <img src="{{url_for('static', filename='hero.png')}}"/>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      var toggleBtn = document.querySelector('.theme-toggle-btn')
+      var body = document.querySelector('body')
+
+      window.onload = function () {
+        const theme = localStorage.getItem('theme') || 'light'
+
+        if (theme === 'dark') {
+          body.classList.add('dark')
+          toggleBtn.classList.add('dark')
+        }
+      }
+
+      toggleBtn.addEventListener('click', function () {
+        const isDark = body.classList.contains('dark')
+
+        body.classList.toggle('dark')
+        toggleBtn.classList.toggle('dark')
+
+        localStorage.setItem('theme', isDark ? 'light' : 'dark')
+      })
+    </script>
+  </body>
+</html>

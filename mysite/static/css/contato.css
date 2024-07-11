@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  :root {
+    --black-color: #000000;
+    --gray-color: #242424;
+    --yellow-color: #494949;
+    --github-color: #4267b2;
+    --insta-color: #d62976;
+    --twitter-color: #1da1f2;
+    --linkedin-color: #0077b7;
+    --google-color: #f4b400;
+    --youtube-color: #ff0000;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: var(--blue-color);
+    background-image: linear-gradient(
+      45deg,
+      var(--blue-color),
+      var(--pink-color),
+      var(--yellow-color)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff; */
+  }
+  
+  .menu .action_btn {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1.2s linear, box-shadow 1.2s ease, scale 0.2s ease;
+    z-index: 1;
+  }
+  
+  .menu .action_btn:hover {
+    scale: 1.05;
+  }
+  
+  .menu .action_btn:active {
+    scale: 0.95;
+  }
+  
+  .menu.open .action_btn {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 2px var(--pink-color), 0 0 0 10px #fff;
+  }
+  
+  .menu li {
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: 0.5s;
+    /* Reverse delay on close */
+    transition-delay: calc(0.2s * (6 - var(--i)));
+  }
+  
+  .menu.open li {
+    transform: translate(
+      calc(-50% + 1px * var(--x)),
+      calc(-50% + 1px * var(--y))
+    );
+    /*Close Delay */
+    transition-delay: calc(0.15s * var(--i));
+  }
+  
+  .menu li a {
+    width: 10px;
+    height: 10px;
+    background-color: #303030;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    transition-delay: calc(0.2s * (6 - var(--i) - 1));
+  }
+  
+  .menu.open li a {
+    width: 60px;
+    height: 60px;
+    /* Open Delay - width, height */
+    transition-delay: calc(0.25s * var(--i));
+  }
+  
+  
